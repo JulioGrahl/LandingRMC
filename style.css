@@ -1,9 +1,9 @@
 /* Reset e Variáveis Globais */
 :root {
-    --primary-color: #1a3e72; /* Azul escuro baseado na logo */
-    --secondary-color: #2a5a9c; /* Azul médio */
-    --accent-color: #4a8be8; /* Azul claro */
-    --dark-color: #0d2444; /* Azul mais escuro */
+    --primary-color: #ac945c;
+    --secondary-color: #e8d191; /* Azul médio */
+    --accent-color: #7a7a7a; /* Azul claro */
+    --dark-color: #494949; /* Azul mais escuro */
     --light-color: #f8f9fa;
     --text-color: #333;
     --light-text: #666;
@@ -116,6 +116,8 @@ header .container {
 
 .logo-img {
     height: 60px;
+    margin-top: -15px;
+    margin-bottom: -15px;
     width: auto;
 }
 
@@ -157,7 +159,7 @@ nav ul li a:hover:after {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(26, 62, 114, 0.8), rgba(26, 62, 114, 0.8)), url('images/hero-bg.jpg');
+    background: linear-gradient(rgba(26, 63, 114, 0.153), rgba(26, 63, 114, 0.652)), url('images/imagem\ fundo.jpg');
     background-size: cover;
     background-position: center;
     color: var(--white);
@@ -253,6 +255,25 @@ nav ul li a:hover:after {
 
 .valor-card p {
     color: var(--light-text);
+}
+
+.imagensSocias{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 60px;
+}
+
+.socia1 img{
+    height: 700px;
+    border-radius: 0px 40px 0px 40px;
+    box-shadow: 5px 5px 20px var(--dark-gray);
+}
+
+.socia2 img{
+    height: 700px;
+    border-radius: 40px 0px 40px 0px;
+    box-shadow: 5px 5px 20px var(--dark-gray);    
 }
 
 /* Sócias */
@@ -370,6 +391,46 @@ nav ul li a:hover:after {
     font-size: 20px;
 }
 
+/* Testimonials */
+
+.section-title{
+    text-align: center;
+}
+
+.testimonials {
+    background-color: #f9f9f9;
+    padding-top: 100px;
+}
+
+.testimonial-slider {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.testimonial-item {
+    padding: 30px;
+}
+
+.testimonial-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    border: 3px solid #bc9c22;
+}
+
+.testimonial-item p {
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.testimonial-item h4 {
+    font-size: 1.2rem;
+    color: #222;
+}
+
 /* Contato */
 .contato-section {
     padding: 80px 0;
@@ -475,7 +536,7 @@ nav ul li a:hover:after {
 
 /* Footer */
 footer {
-    background-color: var(--primary-color);
+    background-color: rgba(12, 27, 47, 0.925);
     color: var(--white);
     padding: 60px 0 20px;
 }
@@ -548,28 +609,31 @@ footer {
     font-size: 14px;
 }
 
-/* WhatsApp Float */
-.whatsapp-float {
+/* ----- BOTÃO WHATSAPP FIXO ----- */
+.btn-whatsapp {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25D366;
-    color: white;
-    width: 60px;
-    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    padding:10px;
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     z-index: 99;
-    transition: all 0.3s ease;
+    transition: transform 0.3s;
 }
 
-.whatsapp-float:hover {
-    background-color: #128C7E;
+.div_whatsapp{
+    height: 50px;
+    width: 50px;
+}
+
+.btn-whatsapp:hover {
     transform: scale(1.1);
+}
+
+.btn-whatsapp img {
+    width: 50px;
+    height: 50px;
 }
 
 /* Responsividade */
@@ -590,12 +654,16 @@ footer {
 @media (max-width: 768px) {
     header .container {
         flex-direction: column;
-        gap: 20px;
+        gap: 0px;
+        align-items: center;
     }
     
     nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
+        display: none;
+    }
+
+    .whatsapp-header{
+        display: none;
     }
     
     nav ul li {
