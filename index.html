@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RVC - Ronchi Milioli & Cardoso Cipriano Advogados</title>
+    <title>RMC - Ronchi Milioli & Cardoso Cipriano Advogados</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -222,7 +222,7 @@
                 </div>
             </div>
             
-            <a href="https://wa.me/SEUNUMERO" class="whatsapp-btn" target="_blank">
+            <a href="https://wa.me/5548999999999" class="whatsapp-btn" target="_blank">
                 <i class="fab fa-whatsapp"></i>Conversar por WhatsApp
             </a>
         </div>
@@ -231,7 +231,56 @@
             <img src="images/WhatsApp Image 2025-07-01 at 09.09.54.jpeg" alt="">
         </div>
     </div>
-    </section>  
+    </section> 
+    
+    <script>
+        // Adicione este script no final do body ou em um arquivo .js separado
+document.addEventListener('DOMContentLoaded', function() {
+    function animateValue(element, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            const value = Math.floor(progress * (end - start) + start);
+            
+            // Formatação com '+' e separador de milhar
+            element.textContent = '+' + value.toLocaleString('pt-BR');
+            
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+
+    function handleIntersection(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const numeroItems = entry.target.querySelectorAll('.numero');
+                
+                // Anima o primeiro número (+10)
+                animateValue(numeroItems[0], 0, 10, 1500);
+                
+                // Anima o segundo número (+6.000) - mais lento
+                animateValue(numeroItems[1], 0, 6000, 2000);
+                
+                observer.unobserve(entry.target);
+            }
+        });
+    }
+
+    // Configura o Intersection Observer
+    const observer = new IntersectionObserver(handleIntersection, {
+        threshold: 0.5 // Dispara quando 50% da seção estiver visível
+    });
+
+    // Observa a section de destaque
+    const destaqueSection = document.querySelector('.destaque-section');
+    if (destaqueSection) {
+        observer.observe(destaqueSection);
+    }
+});
+    </script>
 
     <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
@@ -348,7 +397,6 @@
                         <li><a href="#inicio">Início</a></li>
                         <li><a href="#sobre">Sobre Nós</a></li>
                         <li><a href="#atuacao">Áreas de Atuação</a></li>
-                        <li><a href="#contato">Contato</a></li>
                     </ul>
                 </div>
                 
@@ -370,7 +418,7 @@
     </footer>
 
     <!-- Botão Fixo do WhatsApp -->
-    <a href="https://api.whatsapp.com/send?phone=16199279207" target="_blank" class="btn-whatsapp">
+    <a href="https://wa.me/5548999999999" target="_blank" class="btn-whatsapp">
         <div class="div_whatsapp">
             <img src="https://img.icons8.com/?size=512&id=16713&format=png" alt="WhatsApp">
         </div>

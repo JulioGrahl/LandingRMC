@@ -55,6 +55,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
     
+    
+
     // Configuração inicial para animação
     const animatedElements = document.querySelectorAll('.valor-card, .socia-card, .atuacao-card');
     animatedElements.forEach(element => {
