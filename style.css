@@ -480,6 +480,21 @@ nav ul li a:hover:after {
     box-shadow: 5px 5px 15px rgb(66, 64, 64);
 }
 
+.div-reviews{
+    padding-left:150px; 
+    padding-right: 150px; 
+
+}
+
+@media (max-width: 768px) {
+    .div-reviews{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+
+
 /* Responsividade */
 @media (max-width: 768px) {
     .imgDestaque img{
